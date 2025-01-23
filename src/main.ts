@@ -2,6 +2,7 @@ import './style.css';
 import type { MpSdk } from '../assets/sdk.d.ts'
 
 const init = async () => {
+  // Attempt to dynamically load the webcomponent to avoid bundle errors
   await import('@matterport/webcomponent');
   
   const container = document.getElementById('app');

@@ -19,7 +19,11 @@ const init = async () => {
   container.appendChild(showcase);
   showcase?.addEventListener('mpSdkPlaying', async (evt: any) => {
     const mpSdk: MpSdk = evt.detail.mpSdk;
-    mpSdk.Camera.rotate(90, 0);
+    onShowcaseLoaded(mpSdk);
   });
 }
 init();
+
+const onShowcaseLoaded = async(mpSdk: MpSdk) => {
+  mpSdk.Camera.rotate(90, 0);
+}

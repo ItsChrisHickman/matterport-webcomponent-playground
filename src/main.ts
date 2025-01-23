@@ -1,31 +1,22 @@
 import './style.css';
-import { MpSdk } from '../assets/sdk.d'
+import type { MpSdk } from '../assets/sdk.d.ts'
 
-const MP_SDK_KEY = 'yxszifc05b1bidcsqfr60806d';
-const QUERY_STRING = window.location.search;
-const URL_PARAMS = new URLSearchParams(QUERY_STRING);
-const MODEL = URL_PARAMS.get('m') ? URL_PARAMS.get('m') : 'JGPnGQ6hosj';
+const init = async () => {
+  await import('@matterport/webcomponent');
+  const currentContainer = document.querySelector('matterport-viewer');
+  if (currentContainer === null) {
+    return;
+  }
+  const newWebComponent = document.createElement('matterport-viewer');
+  if (newWebComponent === null) {
+    return;
+  }
 
-// connect the sdk; log an error and stop if there were any connection issues
-(async function connectSdk() {
-  const iframe = document.getElementById('showcase');
-  iframe.src =
-    '/assets/showcase.html?m=' +
-    MODEL +
-    '&play=1&hr=0&useLegacyIds=0&qs=1&applicationKey=' +
-    MP_SDK_KEY;
-  iframe.addEventListener('load', async function () {
-    try {
-      let mpSdk = await showcase.contentWindow.MP_SDK.connect(showcase);
-      onShowcaseConnect(mpSdk);
-    } catch (e) {
-      console.error(e);
-      return;
-    }
+  currentContainer.appendChild(newWebComponent);
+
+  newWebComponent?.addEventListener('mpSdkPlaying', async (evt: any) => {
+    const mpSdk: MpSdk = evt.detail.mpSdk;
+    mpSdk.Camera.rotate(90, 0);
   });
-})();
-
-async function onShowcaseConnect(mpSdk: MpSdk) {
-  console.log('Hello Bundle SDK', mpSdk)
-
 }
+init();

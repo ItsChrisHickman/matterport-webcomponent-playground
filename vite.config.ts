@@ -4,8 +4,6 @@ import {defineConfig} from 'vite'
 
 export default defineConfig({
   ssr: {
-    noExternal: [
-      '@matterport/webcomponent',
-    ],
+    noExternal: true
   },
 })

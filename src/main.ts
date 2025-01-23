@@ -12,6 +12,7 @@ const init = async () => {
   if (showcase === null) {
     return;
   }
+  showcase.setAttribute('m', 'SxQL3iGyoDo');
   showcase.setAttribute('asset-base', 'assets');
   showcase.setAttribute('application-key','yxszifc05b1bidcsqfr60806d');
   container.appendChild(showcase);

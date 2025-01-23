@@ -1,19 +1,31 @@
 import './style.css';
-import '@matterport/webcomponent';
+import { MpSdk } from '../assets/sdk.d'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <h1>Matterport WebComponent</h1>
-    <div class="card">
-      <matterport-viewer m="SxQL3iGyoDo" application-key="yxszifc05b1bidcsqfr60806d" asset-base="assets"></matterport-viewer>
-    </div>
-  </div>
-`;
+const MP_SDK_KEY = 'yxszifc05b1bidcsqfr60806d';
+const QUERY_STRING = window.location.search;
+const URL_PARAMS = new URLSearchParams(QUERY_STRING);
+const MODEL = URL_PARAMS.get('m') ? URL_PARAMS.get('m') : 'JGPnGQ6hosj';
 
-const viewer = document.querySelector('matterport-viewer');
-if (viewer !== null) {
-  viewer.addEventListener('mpSdkPlaying', evt => {
-    const mpSdk = evt.detail.mpSdk;
-    mpSdk.Camera.rotate(90, 0);
-  })
+// connect the sdk; log an error and stop if there were any connection issues
+(async function connectSdk() {
+  const iframe = document.getElementById('showcase');
+  iframe.src =
+    '/assets/showcase.html?m=' +
+    MODEL +
+    '&play=1&hr=0&useLegacyIds=0&qs=1&applicationKey=' +
+    MP_SDK_KEY;
+  iframe.addEventListener('load', async function () {
+    try {
+      let mpSdk = await showcase.contentWindow.MP_SDK.connect(showcase);
+      onShowcaseConnect(mpSdk);
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  });
+})();
+
+async function onShowcaseConnect(mpSdk: MpSdk) {
+  console.log('Hello Bundle SDK', mpSdk)
+
 }

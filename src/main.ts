@@ -1,9 +1,9 @@
 import './style.css';
-import type { MpSdk } from '../assets/sdk.d.ts'
+import type { MpSdk } from '../assets/sdk'
+import('@matterport/webcomponent');
 
 const init = async () => {
   // Attempt to dynamically load the webcomponent to avoid bundle errors
-  await import('@matterport/webcomponent');
   
   const container = document.getElementById('app');
   if (container === null) {
@@ -15,7 +15,7 @@ const init = async () => {
   }
   showcase.setAttribute('m', 'SxQL3iGyoDo');
   showcase.setAttribute('asset-base', 'assets');
-  showcase.setAttribute('application-key','yxszifc05b1bidcsqfr60806d');
+  showcase.setAttribute('application-key','xtet8rr5t5i42rwanintd7rzb');
   container.appendChild(showcase);
   showcase?.addEventListener('mpSdkPlaying', async (evt: any) => {
     const mpSdk: MpSdk = evt.detail.mpSdk;

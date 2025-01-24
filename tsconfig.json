@@ -14,13 +14,9 @@
     "useDefineForClassFields": true,
     "lib": ["esnext", "dom", "dom.iterable"],
     "skipLibCheck": true,
-
-    /* Bundler mode */
-//    "moduleResolution": "bundler",
-//    "allowImportingTsExtensions": true,
-//    "isolatedModules": true,
-//    "moduleDetection": "force",
-//    "noEmit": true,
+    
+    // Allow class properties to be uninitialized.
+    "strictPropertyInitialization": false,
 
     /* Linting */
     "strict": true,

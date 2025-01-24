@@ -28,10 +28,6 @@ init();
 
 const onShowcaseLoaded = async (sdk: MpSdk) => {
 
-  await sdk.App.state.waitUntil(
-    (appState) => appState.phase == "appphase.playing"
-  );
-
   // register components
   await sdk.Scene.registerComponents([
     {

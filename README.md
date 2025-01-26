@@ -1,12 +1,13 @@
-# matterport-webcomponent-playground
+# matterport-sdk-examples
 
-A code playground that installs the Matterport WebComponent in a Vite/TS environment for creation
-of code examples and experimenting with 'bundle' features.  Automatically initializes and installs
-the bundle, etc.
+The Matterport SDK Examples repository is a new collection of examples built on our WebComponent
+to help inspire and kick-start Matterport SDK Projects.
+
+The SDK Examples were built to be accessible both as a GitHub Repo and to be accessible via 
+StackBlitz.
+
+The repository was built on Vite and leverages TypeScript to provide introspection throughout
+all examples.
 
 Try it, fork it, play with it at: 
 https://stackblitz.com/~/github.com/ItsChrisHickman/matterport-webcomponent-playground?file=src/main.ts
-
----
-
-Explore the branches in this repo to see other demos that we've used this to build!

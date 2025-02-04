@@ -1,13 +1,13 @@
-# matterport-sdk-examples
+# matterport-webcomponent-starter
 
-The Matterport SDK Examples repository is a new collection of examples built on our WebComponent
-to help inspire and kick-start Matterport SDK Projects.
+This repo is a new collection of examples built on the Matterport WebComponent to help inspire and 
+kick-start Matterport SDK Projects.
 
-The SDK Examples were built to be accessible both as a GitHub Repo and to be accessible via 
-StackBlitz.
+https://www.npmjs.com/package/@matterport/webcomponent
 
-The repository was built on Vite and leverages TypeScript to provide introspection throughout
-all examples.
+This repo was designed to be accessible both as a GitHub Repo and to be accessible via StackBlitz.
+
+THe foundation of this repo is Vite and TypeScript is leveraged as best practices.
 
 Try it, fork it, play with it at: 
 https://stackblitz.com/~/github.com/ItsChrisHickman/matterport-webcomponent-playground?file=src/main.ts

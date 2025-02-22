@@ -1,32 +1,7 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "noImplicitReturns": true,
-    "noEmitOnError": true,
-    "noUnusedLocals": true,
-    "useDefineForClassFields": true,
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "skipLibCheck": true,
-    
-    // Allow class properties to be uninitialized.
-    "strictPropertyInitialization": false,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": [
-    "./src/**/*",
-  ],
-  "exclude": [
-    "public/assets/*"
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
   ]
 }

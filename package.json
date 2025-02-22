@@ -1,6 +1,5 @@
 {
   "name": "matterport-webcomponent-playground",
-  "private": false,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
@@ -10,13 +9,14 @@
     "install": "yarn matterport-assets public/assets"
   },
   "devDependencies": {
-    "typescript": "~5.7.2",
     "@types/three": "^0.151.0",
+    "typescript": "~5.7.2",
     "vite": "^6.0.7",
     "vite-plugin-dynamic-import": "^1.6.0"
   },
   "dependencies": {
     "@matterport/webcomponent": "^0.1.43",
     "three": "0.151"
-  }
+  },
+  "packageManager": "yarn@4.5.3"
 }
